@@ -22,8 +22,8 @@ class MemberServiceTest {
     }
 
     @AfterEach
-    void AfterE(){
-           memberRepository.clearstore();
+    void AfterEach(){
+        memberRepository.clearstore();
     }
 
     @Test
