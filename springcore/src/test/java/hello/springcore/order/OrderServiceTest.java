@@ -1,5 +1,6 @@
 package hello.springcore.order;
 
+import hello.springcore.AppConfig;
 import hello.springcore.member.Grade;
 import hello.springcore.member.Member;
 import hello.springcore.member.MemberService;
@@ -8,8 +9,10 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class OrderServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
