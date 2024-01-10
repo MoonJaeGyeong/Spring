@@ -1,4 +1,5 @@
-import java.util.List;
+package hellojpa;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -13,13 +14,12 @@ public class JpaMain {
         EntityTransaction tx = entityManager.getTransaction();
         tx.begin();
         try{
-            Member member1 = entityManager.find(Member.class, 10L);
+            Member member =  new Member();
+            member.setUsername("C");
 
-            member1.setName("ZZZ");
+            entityManager.persist(member);
 
-            System.out.println("=====================");
             tx.commit();
-
         } catch (Exception e){
             tx.rollback();
         } finally {
